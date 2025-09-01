@@ -20,6 +20,9 @@ struct ExpenseRow: View {
             Text(item.amount, format: .currency(code: "USD"))
                 .foregroundColor(colorFor(amount: item.amount))
         }
+        .accessibilityElement() 
+        .accessibilityLabel("\(item.name), \(item.amount, format: .currency(code: "USD"))")
+        .accessibilityHint(item.type.rawValue)
     }
 }
 
